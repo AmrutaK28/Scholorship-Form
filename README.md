@@ -1,1 +1,1 @@
-# Scholorship-Form
+# Scholorship Application Form

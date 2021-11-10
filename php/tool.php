@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <title>Tool Page</title>
@@ -65,9 +64,9 @@
                 if((!preg_match("/^[0-9]*$/", $contact)) or (strlen($contact))!=10 or empty($contact)){  
                     return false;
                 } else {  
-                    return true;
+                    return true; 
                 }  
-            }
+            } 
             function addressValidate($address){
                 if (empty($address)){
                     return false;
@@ -75,8 +74,20 @@
                 else{
                     return true;
                 }
-
             }
+            function backlogValidate($backlog){
+                if(!empty($backlog) and ($backlog >= 0) and ($backlog < 4)){  
+                    $set = true;
+                } 
+                else {  
+                    $set = false; 
+                }  
+               if($backlog == 0){
+                   $set = true;
+               }
+               return $set;
+            }
+
             function cgpaValidate($cgpa){
                 if((!preg_match("/^[0-9]\.?\d{0,2}$/", $cgpa)) or empty($cgpa)){
                     return false;
@@ -84,6 +95,29 @@
                 else{
                     return true;
                 }  
+            }
+            function adharValidate($adhar){
+                if((!preg_match("/^[0-9]*$/", $adhar)) or (strlen($adhar))!=12 or empty($adhar)){  
+                    return false;
+                } else {  
+                    return true; 
+                }  
+            }
+            function incomeValidate($income){
+                if((!preg_match("/^[0-9]*$/", $income)) or empty($income)){
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+            function feeValidate($fee){
+                if((!preg_match("/^[0-9]*$/", $fee)) or (strlen($fee))!=5 or empty($fee)){
+                    return false;
+                }
+                else{
+                    return true;
+                }
             }
             $conn = new mysqli("localhost", "root", "", "Scholorship Form");
             if ($conn->connect_error) {
@@ -103,8 +137,14 @@
                 $cgpa = cgpaValidate($row["cgpa"]);
                 $branch = addressValidate($row["branch"]);
                 $year = addressValidate($row["year"]);
-                $backlog = addressValidate($row["backlog"]);
-                if($email and $name and $dob and $contact and $address and $clg_name and $cgpa and $branch and $year and $backlog){
+                $backlog = backlogValidate($row["backlog"]);
+                $adhar = adharValidate($row["adhar_card"]);
+                $scholorship = addressValidate($row["scholorship"]);
+                $caste = addressValidate($row["caste"]);
+                $income = incomeValidate($row["income"]);
+                $fee = feeValidate($row["fee"]);
+
+                if($email and $name and $dob and $contact and $address and $clg_name and $cgpa and $branch and $year and $backlog and  $adhar and $scholorship and $caste and $income and $fee){
                     $result1 = "Pass";
                 }
                 else{
@@ -113,16 +153,17 @@
                 $count++;
                   echo  "<tr><td> ". $count."</td><td> ". $row["name"]. "</td><td> " . $row["email"] ."</td><td> ".$row["dob"]."</td><td> ".$row["contact_no"]."</td><td> ".$row["address"]."</td><td>".$row["college_name"]."</td><td>".$row["branch"]."</td><td>".$row["year"]."</td><td>".$row["cgpa"]."</td><td>".$row["backlog"]."</td><td>".$row["adhar_card"]."</td><td>".$row["scholorship"]."</td><td>".$row["caste"]."</td><td>".$row["income"]."</td><td>".$row["fee"]."</td><td>".$result1."</td></tr> ";
               }  
-           }
+           } 
               if($count==0)
               {
                 echo "<tr><td></td><td></td><td>No Records</td><td></td><td></td></tr>";
                 echo "</table>";
               }
-          $conn->close();
+          $conn->close(); 
           ?>
         </table>
             </div>
       </div>
 </body>
 </html>
+

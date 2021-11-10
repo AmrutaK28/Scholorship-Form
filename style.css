@@ -1,0 +1,141 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container{
+	width: 100%;
+	height: 100vh;
+	background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(images/bgimg.png);
+	background-position: center;
+	background-size: cover;
+	padding-left: 8%;
+	padding-right: 8%;
+	box-sizing: border-box;
+}
+ 
+.navbar{
+	height: 12%;
+	display: flex;
+	align-items: center;
+}
+
+.logo{
+	width: 340px;
+	height: 380px;
+	cursor: pointer;
+}
+
+.menu-icon{
+	width: 30px;
+	cursor: pointer;
+	margin-left: 40px;
+}
+
+.nav{
+	flex: 1;
+	text-align: right;
+}
+
+.row{
+	display:flex;
+	height: 88%;
+	align-items: center; 
+}
+
+.col{
+	flex-basis: 50%;
+}
+
+h1{
+	color: #ffffff;
+	font-size: 50px;
+	align-items: left;
+}
+
+p{
+	color: #000000;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+h5{
+	color: #000000;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.card{
+	width: 320px;
+	height: 250px;
+	display: block;
+	border-radius: 10px;
+	padding: 15px 25px;
+	box-sizing: border-box;
+	cursor: pointer;
+	margin: 30px 5px ;
+	background-image:url(images/pm.jfif);
+	background-position: center;
+	background-size: cover;
+	transition: transform 0.5s;
+	margin-bottom: 150px;
+}
+
+.card1{
+	width: 390px;
+	height: 270px;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 15px 25px;
+	box-sizing: border-box;
+	cursor: pointer;
+	margin: 10px 15px ;
+	background-image:url(images/pm.jfif);
+	background-position: center;
+	background-size: cover;
+	margin-bottom: 150px;
+}
+
+.card2{
+	width: 320px;
+	height: 250px;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 15px 25px;
+	box-sizing: border-box;
+	cursor: pointer;
+	margin: 4px 4px ;
+	background-image:url(images/pm.jfif);
+	background-position: center;
+	background-size: cover;
+	margin-bottom: 150px;
+}
+
+.card:hover{
+	transform: translateY(-10px);
+}
+
+h5{
+	color: #000000;
+	text-shadow: 0 0 5px #999;
+}
+
+.card p{
+	text-shadow: 0 0 15px #000;
+	font-size: 12px;
+}
+
+button{
+	width: 60px;
+	height: 30px;
+	color: #000;
+	font-size: 12px;
+	font-weight:bold;
+	padding: 9px 0;
+	background: #fff;
+	border: 0;
+	border-radius: 20px;
+	outline: none;
+	margin-top: 30px;	
+}

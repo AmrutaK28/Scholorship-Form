@@ -7,3 +7,4 @@ Our project has three basic forms for Scholorship Application :
 
 ## Snapshots
 <img src="images/main.png" width=750/>
+<img src="images/firstpage.png" width=750/>

@@ -6,3 +6,4 @@ Our project has three basic forms for Scholorship Application :
 3. Scholorship Details
 
 ## Snapshots
+<img src="images/main.png" width=750/>
